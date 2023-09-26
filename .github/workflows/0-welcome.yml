@@ -1,3 +1,14 @@
+ name: Post welcome comment
+on:
+  pull_request:
+    types: [opened]
+permissions:
+  pull-requests: write
+jobs:
+  build:
+    name: Post welcome comment
+    runs-on: ubuntu-latest
+
 name: Step 0, Welcome
 
 # This step triggers after the learner creates a new repository from the template.
@@ -89,14 +100,3 @@ jobs:
           from_step: 0
           to_step: 1
           branch_name: welcome-workflow
-
-         name: Post welcome comment
-on:
-  pull_request:
-    types: [opened]
-permissions:
-  pull-requests: write
-jobs:
-  build:
-    name: Post welcome comment
-    runs-on: ubuntu-latest
